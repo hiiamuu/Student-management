@@ -1,18 +1,11 @@
 {
   "students": [
     {
-      "name": "Ashtam KP",
+      "name": "Amit",
       "course": "BCA",
-      "marks": 98,
+      "marks": 12,
       "isActive": true,
-      "id": "7OqpDKet49c"
-    },
-    {
-      "name": "Aman Kumar",
-      "course": "MCA",
-      "marks": 88,
-      "isActive": false,
-      "id": "9NOw0lVRYpc"
+      "id": "xyUlwkZluwU"
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"
