@@ -1,16 +1,20 @@
 import React, { useState } from "react";
 import UserList from "@/pages/users/UserList";
 import CreateUserDialog from "@/pages/users/CreateUserDialog";
+import useCounter from "@/hooks/useCounter";
 
 const Home = () => {
     const [openCreateDialog, setOpenCreateDialog] = useState(false);
+    const { counter, startCounter } = useCounter(59);
+
+    const handleResend = () => {
+        startCounter(59);
+    }
 
     return (
         <div className="mx-auto max-w-5xl p-6">
             <div className="mb-6 flex items-center justify-between">
-                <h1 className="text-2xl font-bold text-gray-800">
-                    Users
-                </h1>
+                <h1 className="text-2xl font-bold text-gray-800">Users</h1>
 
                 <button
                     onClick={() => setOpenCreateDialog(true)}
@@ -19,6 +23,12 @@ const Home = () => {
                     + Add User
                 </button>
             </div>
+
+            {counter > 0 ? (
+                <p>Resend OTP in ${counter} seconds</p>
+            ) :(
+                <button onClick={handleResend}>Resend OTP</button>
+            )}
 
             <UserList />
 
